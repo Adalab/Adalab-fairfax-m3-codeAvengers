@@ -1,5 +1,8 @@
 import React from 'react';
-import './App.scss';
+import './scss/main.scss';
+import logo from './images/awesome-logo.svg';
+import logoAdalab from './images/logo-adalab.png';
+import logoAvengers from './images/avengers.png';
 
 class App extends React.Component {
   render () {
@@ -9,7 +12,7 @@ class App extends React.Component {
         <div className="landing__subwrapper">
           <header className="header__landing header__card">
             <div className="header__logo-container"> <a href="index.html">
-            <h1 className="header__logo">Title Awesome profile-cards</h1></a>
+            <h1 className="header__logo" style={{backgroundImage:`url(${logo})`}}>Title Awesome profile-cards</h1></a>
             </div>
           </header>
           <main className="landing__main">
@@ -42,9 +45,9 @@ class App extends React.Component {
         <footer className="footer-container">
           <div className="footer-container__wraper">
             <p className="footer__text">Awesome profile cards &copy2018</p> <a href="https://github.com/Adalab/fairfax-m2-catchFire"
-            target="_blank"><img src="assets/images/catch-fire.png" alt="logo grupo Catch Fire" className="footer__fire"/></a>
+            target="_blank"><img src={logoAvengers} alt="logo grupo Catch Fire" className="footer__fire"/></a>
             <a href="https://adalab.es/" className="footer__link" target="_blank">
-                <img src="assets/images/logo-adalab.png" alt="logo adalab" className="footer__img"/>
+                <img src={logoAdalab} alt="logo adalab" className="footer__img"/>
             </a>
           </div>
         </footer>
