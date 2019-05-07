@@ -1,5 +1,5 @@
 import React from 'react';
-import logoAvengers from '../images/avengers.png';
+
 
 class Home extends React.Component {
   render () {
@@ -66,7 +66,7 @@ class Home extends React.Component {
               target="_blank"
             >
               <img
-                src={logoAvengers}
+                src={this.props.logoAvengers}
                 alt="logo grupo Catch Fire"
                 className="footer__fire"
               />
