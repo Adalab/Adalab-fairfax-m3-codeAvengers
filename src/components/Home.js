@@ -26,7 +26,7 @@ class Home extends React.Component {
                   {this.props.title}
                 </h2>
                 <h3 className="landing__main--description">
-                  Crea mejores contactos profesionales de forma fácil y cómoda
+                  {this.props.subtitle}
                 </h3>
                 <ul className="landing__list">
                   <li className="landing__list--item">
