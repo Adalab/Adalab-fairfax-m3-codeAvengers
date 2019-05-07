@@ -5,7 +5,7 @@ import logo from './images/awesome-logo.svg';
 
 class App extends React.Component {
   render () {
-  return <Home LogoUrl={logo} />
+  return <Home LogoUrl={logo} title='Crea tu tarjeta de visita' />
 }
 }
 
