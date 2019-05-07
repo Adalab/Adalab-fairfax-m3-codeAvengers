@@ -1,5 +1,4 @@
 import React from 'react';
-import logoAdalab from '../images/logo-adalab.png';
 import logoAvengers from '../images/avengers.png';
 
 class Home extends React.Component {
@@ -77,7 +76,7 @@ class Home extends React.Component {
               className="footer__link"
               target="_blank"
             >
-              <img src={logoAdalab} alt="logo adalab" className="footer__img" />
+              <img src={this.props.logoAdalab} alt="logo adalab" className="footer__img" />
             </a>
           </div>
         </footer>
