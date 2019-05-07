@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8fb9802d.chunk.css",
+    "main.js": "./static/js/main.caa9d1b0.chunk.js",
+    "main.js.map": "./static/js/main.caa9d1b0.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/js/2.bbcd3f81.chunk.js": "./static/js/2.bbcd3f81.chunk.js",
+    "static/js/2.bbcd3f81.chunk.js.map": "./static/js/2.bbcd3f81.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.446daf09d80969e9f99c8c15f28756f1.js": "./precache-manifest.446daf09d80969e9f99c8c15f28756f1.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.8fb9802d.chunk.css.map": "./static/css/main.8fb9802d.chunk.css.map",
+    "static/media/avengers.png": "./static/media/avengers.8aacdf3e.png",
+    "static/media/main.scss": "./static/media/awesome-logo.0118e311.svg"
+  }
+}
