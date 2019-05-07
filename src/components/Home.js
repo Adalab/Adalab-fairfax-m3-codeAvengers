@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../images/awesome-logo.svg';
 import logoAdalab from '../images/logo-adalab.png';
 import logoAvengers from '../images/avengers.png';
 
@@ -13,7 +12,7 @@ class Home extends React.Component {
                 <div className="landing__subwrapper">
                   <header className="header__landing header__card">
                     <div className="header__logo-container"> <a href="index.html">
-                    <h1 className="header__logo" style={{backgroundImage:`url(${logo})`}}>Title Awesome profile-cards</h1></a>
+                    <h1 className="header__logo" style={{backgroundImage:`url(${this.props.LogoUrl})`}}>Title Awesome profile-cards</h1></a>
                     </div>
                   </header>
                   <main className="landing__main">
