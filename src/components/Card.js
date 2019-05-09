@@ -1,17 +1,11 @@
 import React from 'react';
+import Header from './Header';
 
 class Card extends React.Component {
     render() {
         return (
             <div className="card__body" id="card__body">
-                <header className="header__landing header__card">
-                    <div className="header__logo-container">
-                        <a href="index.html">
-                            <h1 className="header__logo">Title Awesome profile-cards</h1>
-                        </a>
-
-                    </div>
-                </header>
+                <Header />
                 <main className="card__main">
                     <div>
                         <form action="" method="post" className="section__settings">
