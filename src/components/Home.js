@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from './Footer';
 
 class Home extends React.Component {
   render () {
@@ -57,29 +57,7 @@ class Home extends React.Component {
             </main>
           </div>
         </div>
-        <footer className="footer-container">
-          <div className="footer-container__wraper">
-            <p className="footer__text">Awesome profile cards &copy2018</p>
-            {' '}
-            <a
-              href="https://github.com/Adalab/fairfax-m2-catchFire"
-              target="_blank"
-            >
-              <img
-                src={this.props.logoAvengers}
-                alt="logo grupo Catch Fire"
-                className="footer__fire"
-              />
-            </a>
-            <a
-              href="https://adalab.es/"
-              className="footer__link"
-              target="_blank"
-            >
-              <img src={this.props.logoAdalab} alt="logo adalab" className="footer__img" />
-            </a>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }
