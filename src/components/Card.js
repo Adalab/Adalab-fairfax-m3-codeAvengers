@@ -3,6 +3,7 @@ import Header from './Header';
 import Collapsible from './Collapsible';
 import Footer from './Footer';
 
+
 class Card extends React.Component {
     render() {
         return (
