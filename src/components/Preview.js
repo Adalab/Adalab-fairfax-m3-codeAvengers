@@ -9,8 +9,8 @@ class Preview extends React.Component {
                         <button className="card__reset"><i className="far fa-trash-alt"></i>Reset</button>
                         <div className="card__box--header">
                             <div className="card__box--text">
-                                <h3 className="card__name resultName">Nombre Apellido</h3>
-                                <p className="card__job-title resultJob">Front-end developer</p>
+                                <h3 className="card__name resultName">{this.props.newName.name}</h3>
+                                <p className="card__job-title resultJob">{this.props.newName.job}</p>
                             </div>
                         </div>
                         <div className="card__photo js__profile-image"></div>

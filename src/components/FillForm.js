@@ -7,10 +7,10 @@ class FillForm extends React.Component {
                 <fieldset className="fill__fieldset">
                     <label for="fullName">Nombre completo</label>
                     <input className="input-name" placeholder="Ej: Sally Jill"
-                        id="fullName" type="text" name="name" required />
+                        id="fullName" type="text" name="name" required onChange={this.props.actionToChange} />
                     <label for="jobTitle">Puesto</label>
                     <input className="input-job" placeholder="Ej: Front-end unicorn"
-                        id="jobTitle" type="text" name="job" required />
+                        id="jobTitle" type="text" name="job" required onChange={this.props.actionToChange}/>
                 </fieldset>
                 <fieldset className="fill__fieldset select-image">
                     <label for="selectImage">Imagen de perfil</label>

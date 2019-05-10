@@ -12,8 +12,26 @@ import logo from './images/awesome-logo.svg';
 // }
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handlerInput = this.handlerInput.bind(this);
+    this.state = {
+      name: 'Nombre completo',
+      job: 'Front-End unicorn',
+    }
+  }
+
+  handlerInput(event) {
+    const trigger = event.currentTarget.value;
+    const key = event.currentTarget.name;
+    console.log(key);
+    this.setState({
+      [key]: trigger,
+    });
+  }
+
     render () {
-    return <Card />
+    return <Card actionToChange={this.handlerInput} newName = {this.state}/>
   }
   }
 
