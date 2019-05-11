@@ -8,9 +8,9 @@ class DesignForm extends React.Component {
                     <h3 className="design__title--colors">colores</h3>
 
                 </div>
-                <div> <a href className="design__palette-colors">
-                    <label className="design__palette palette1" for="settings__palette1">
-                        <input className="desidn__radio" value="1" type="radio" id="settings__palette1" name="color" checked />
+                <div> <a href="true" className="design__palette-colors">
+                    <label className="design__palette palette1" htmlFor="settings__palette1">
+                        <input className="desidn__radio" value="1" type="radio" id="settings__palette1" name="color" defaultChecked  />
                         <ul className="design__list">
                             <li className="list__color" style={{ backgroundColor: "#114e4e" }}></li>
                             <li className="list__color" style={{ backgroundColor: "#438792" }}></li>
@@ -18,8 +18,8 @@ class DesignForm extends React.Component {
                         </ul>
                     </label>
                 </a>
-                    <a href className="design__palette-colors">
-                        <label className="design__palette palette2" for="settings__palette2">
+                    <a href="true" className="design__palette-colors">
+                        <label className="design__palette palette2" htmlFor="settings__palette2">
                             <input className="desidn__radio" type="radio" id="settings__palette2" value="2" name="color" />
                             <ul className="design__list">
                                 <li className="list__color" style={{ backgroundColor: "#420101" }}></li>
@@ -28,8 +28,8 @@ class DesignForm extends React.Component {
                             </ul>
                         </label>
                     </a>
-                    <a href className="design__palette-colors">
-                        <label className="design__palette palette3" for="settings__palette3">
+                    <a href="true" className="design__palette-colors">
+                        <label className="design__palette palette3" htmlFor="settings__palette3">
                             <input className="desidn__radio" value="3" type="radio" id="settings__palette3" name="color" />
                             <ul className="design__list">
                                 <li className="list__color" style={{ backgroundColor: "#3e5b65" }}></li>
