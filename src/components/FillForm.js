@@ -24,16 +24,16 @@ class FillForm extends React.Component {
                 <fieldset className="fill__fieldset">
                     <label for="email">Email</label>
                     <input placeholder="Ej: sally-hill@gmail.com" id="email"
-                        type="email" name="email" />
+                        type="email" name="email" onChange={this.props.actionToChange} />
                     <label for="phone">Teléfono</label>
                     <input placeholder="Ej: 555-55-55-55" id="phone" type="tel"
-                        name="phone" />
+                        name="phone" onChange={this.props.actionToChange} />
                     <label for="linkedin">Linkedin</label>
                     <input placeholder="Ej: sally.hill" id="linkedin" type="text"
-                        name="linkedin" />
+                        name="linkedin"  onChange={this.props.actionToChange}/>
                     <label for="github">Github</label>
                     <input placeholder="Ej: sally-hill" id="github" type="text"
-                        name="github" />
+                        name="github" onChange={this.props.actionToChange}/>
                 </fieldset>
             </div>
         )
