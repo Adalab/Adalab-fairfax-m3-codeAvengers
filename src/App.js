@@ -18,6 +18,7 @@ class App extends React.Component {
     this.state = {
       name: 'Nombre completo',
       job: 'Front-End unicorn',
+      defaultClass: 'hidden'
     }
   }
 
@@ -25,9 +26,13 @@ class App extends React.Component {
     const trigger = event.currentTarget.value;
     const key = event.currentTarget.name;
     console.log(key);
-    this.setState({
+    this.setState(
+      // aqui va un if y mirar el ejercicio 2 del 3.7
+      {
       [key]: trigger,
-    });
+      }
+
+      );
   }
 
     render () {
