@@ -10,7 +10,7 @@ class Preview extends React.Component {
                         <div className="card__box--header">
                             <div className="card__box--text">
                                 <h3 className="card__name resultName">{this.props.newName.name === '' ? 'Nombre y apellidos' : this.props.newName.name}</h3>
-                                <p className="card__job-title resultJob">{this.props.newName.job === '' ? 'Front end developer' : this.props.newName.name}</p>
+                                <p className="card__job-title resultJob">{this.props.newName.job === '' ? 'Front end developer' : this.props.newName.job}</p>
                             </div>
                         </div>
                         <div className="card__photo js__profile-image"></div>
