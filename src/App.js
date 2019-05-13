@@ -15,6 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handlerInput = this.handlerInput.bind(this);
+    this.handlePalette = this.handlePalette.bind(this);
     this.state = {
       name: 'Nombre completo',
       job: 'Front-End unicorn',
@@ -22,6 +23,7 @@ class App extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      paletteDefault: '1'
     }
   }
 
@@ -38,8 +40,15 @@ class App extends React.Component {
       );
   }
 
+  handlePalette (event) {
+    const selectedPalette = event.currentTarget.value;
+    if (selectedPalette === '1') {
+      console.log('1');
+    }
+  }
+
     render () {
-    return <Card actionToChange={this.handlerInput} newName = {this.state}/>
+    return <Card actionToChange={this.handlerInput} newName = {this.state} changeColor={this.handlePalette}/>
   }
   }
 

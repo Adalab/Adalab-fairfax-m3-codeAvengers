@@ -16,7 +16,7 @@ class Collapsible extends React.Component {
                                     <h2 className="design__title--name">diseña</h2>
                                     <i id="design-arrow" className="fas fa-chevron-up arrow"></i>
                                 </div>
-                                <DesignForm />
+                                <DesignForm changeColor={this.props.changeColor}/>
                             </fieldset>
                             <fieldset className="fieldset__settings">
                                 <div className="settings__fill section__fieldset">
