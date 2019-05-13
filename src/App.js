@@ -18,7 +18,10 @@ class App extends React.Component {
     this.state = {
       name: 'Nombre completo',
       job: 'Front-End unicorn',
-      defaultClass: 'hidden'
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
     }
   }
 
