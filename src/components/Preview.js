@@ -2,10 +2,10 @@ import React from 'react';
 
 class Preview extends React.Component {
     render() {
-        const { name, job, email, phone, linkedin, github } = this.props.newName;
+        const { name, job, email, phone, linkedin, github, paletteDefault } = this.props.newName;
         return (
             <div>
-                <section className="section__card">
+                <section className={`section__card ${paletteDefault}`}>
                     <div className="card__box">
                         <button className="card__reset"><i className="far fa-trash-alt"></i>Reset</button>
                         <div className="card__box--header">

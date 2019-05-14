@@ -24,7 +24,7 @@ class App extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        paletteDefault: '1'
+        paletteDefault: 'option1'
       } 
     }
   }
@@ -40,9 +40,13 @@ class App extends React.Component {
   handlePalette (event) {
     const selectedPalette = event.currentTarget.value;
     if (selectedPalette === '1') {
-      console.log('1');
-    }
+      this.setState({card:{...this.state.card, paletteDefault:'option1'}})
+    } else if (selectedPalette === '2') {
+      this.setState({card:{...this.state.card, paletteDefault:'option2'}})
+    } else  {
+      this.setState({card:{...this.state.card, paletteDefault:'option3'}})  
   }
+}
 
     render () {
     return <Card actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
