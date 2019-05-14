@@ -11,7 +11,7 @@ class Preview extends React.Component {
                         <div className="card__box--header">
                             <div className="card__box--text">
                                 <h3 className="card__name resultName">{name === '' ? 'Nombre y apellidos' : name}</h3>
-                                <p className="card__job-title resultJob">{job === '' ? 'Front end developer' : name}</p>
+                                <p className="card__job-title resultJob">{job === '' ? 'Front end developer' : job}</p>
                             </div>
                         </div>
                         <div className="card__photo js__profile-image"></div>

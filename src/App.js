@@ -17,13 +17,15 @@ class App extends React.Component {
     this.handlerInput = this.handlerInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
     this.state = {
-      name: 'Nombre completo',
-      job: 'Front-End unicorn',
-      email: '',
-      phone: '',
-      linkedin: '',
-      github: '',
-      paletteDefault: '1'
+      card:{
+        name: 'Nombre completo',
+        job: 'Front-End unicorn',
+        email: '',
+        phone: '',
+        linkedin: '',
+        github: '',
+        paletteDefault: '1'
+      } 
     }
   }
 
@@ -31,13 +33,8 @@ class App extends React.Component {
     const trigger = event.currentTarget.value;
     const key = event.currentTarget.name;
     console.log(key);
-    this.setState(
-      // aqui va un if y mirar el ejercicio 2 del 3.7
-      {
-      [key]: trigger,
-      }
-
-      );
+    const obj = {...this.state.card, [key]: trigger}
+    this.setState({card:obj});
   }
 
   handlePalette (event) {
@@ -48,7 +45,7 @@ class App extends React.Component {
   }
 
     render () {
-    return <Card actionToChange={this.handlerInput} newName = {this.state} changeColor={this.handlePalette}/>
+    return <Card actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
   }
   }
 
