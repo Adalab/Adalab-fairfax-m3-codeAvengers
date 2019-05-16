@@ -25,6 +25,11 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         paletteDefault: 'option1'
+      },
+      collapsible: {
+        design: true,
+        fill: false,
+        share: false
       } 
     }
   }
@@ -47,6 +52,12 @@ class App extends React.Component {
       this.setState({card:{...this.state.card, paletteDefault:'option3'}})  
   }
 }
+
+// handleCollapsibles(event) {
+//   const selectedCollapsible = event.currentTarget;
+//   // Aquí iría un if 
+
+// }
 
     render () {
     return <Card actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
