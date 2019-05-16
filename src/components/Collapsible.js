@@ -16,16 +16,16 @@ class Collapsible extends React.Component {
                                     <h2 className="design__title--name">diseña</h2>
                                     <i id="design-arrow" className="fas fa-chevron-up arrow"></i>
                                 </div>
-                                <DesignForm />
+                                <DesignForm changeColor={this.props.changeColor}/>
                             </fieldset>
                             <fieldset className="fieldset__settings">
-                                <div className="settings__fill section__fieldset hidden__collapsible">
+                                <div className="settings__fill section__fieldset">
                                     <div id="fill" href="#" className="fill__first-box collapsible__title">
                                         <div className="fill__title"> <i className="fill__img far fa-keyboard"></i>
                                             <h2 className="fill__title--name">Rellena</h2>
                                         </div> <i id="fill-arrow" className="fas fa-chevron-up arrow"></i>
                                     </div>
-                                    <FillForm />
+                                    <FillForm actionToChange={this.props.actionToChange}/>
                                 </div>
                             </fieldset>
                             <fieldset className="fieldset__settings">
@@ -40,7 +40,7 @@ class Collapsible extends React.Component {
                         </div>
                     </form>
                 </div>
-                <Preview />
+                <Preview newName={this.props.newName} />
             </main>
         )
     }
