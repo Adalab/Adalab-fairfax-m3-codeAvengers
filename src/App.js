@@ -16,6 +16,7 @@ class App extends React.Component {
     super(props);
     this.handlerInput = this.handlerInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     this.state = {
       card:{
         name: 'Nombre completo',
@@ -48,8 +49,20 @@ class App extends React.Component {
   }
 }
 
+handleReset() {
+  this.setState({card:{
+    name: 'Nombre completo',
+    job: 'Front-End unicorn',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    paletteDefault: 'option1'
+  } })
+}
+
     render () {
-    return <Card actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
+    return <Card actionReset = {this.handleReset} actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
   }
   }
 

@@ -40,7 +40,7 @@ class Collapsible extends React.Component {
                         </div>
                     </form>
                 </div>
-                <Preview newName={this.props.newName} />
+                <Preview actionReset = {this.props.actionReset} newName={this.props.newName} />
             </main>
         )
     }

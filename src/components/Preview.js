@@ -1,4 +1,5 @@
 import React from 'react';
+import ResetButton from './ResetButton';
 
 class Preview extends React.Component {
     render() {
@@ -7,7 +8,7 @@ class Preview extends React.Component {
             <div>
                 <section className={`section__card ${paletteDefault}`}>
                     <div className="card__box">
-                        <button className="card__reset"><i className="far fa-trash-alt"></i>Reset</button>
+                        <ResetButton actionReset = {this.props.actionReset} />
                         <div className="card__box--header">
                             <div className="card__box--text">
                                 <h3 className="card__name resultName">{name === '' ? 'Nombre y apellidos' : name}</h3>
