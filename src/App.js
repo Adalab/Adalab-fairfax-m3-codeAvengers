@@ -60,7 +60,15 @@ class App extends React.Component {
       fill: false,
       share: false,
     }
-    this.setState ({collapsible: {...newCollapsible, [selectedCollapsible]: true}});
+    if(this.state.collapsible[selectedCollapsible] === true) {
+      this.setState({
+        collapsible: {...newCollapsible, [selectedCollapsible]: false}
+      })
+    } else {
+      this.setState({
+        collapsible: {...newCollapsible, [selectedCollapsible]: true}
+      })
+    }
   }
 
   render () {

@@ -3,7 +3,7 @@ import React from 'react';
 class ShareForm extends React.Component {
     render() {
         return (
-            <div id="share-container" className={`share__collapsible--container ${this.props.collapsibleValue.share === true ? '' : 'hidden'}`}>
+            <div id="share-container" className="share__collapsible--container collapsible__container">
                 <div className="share__options">
                     <button type="submit" className="share__button "><i className="share__button--img far fa-address-card"></i>Crear tarjeta</button>
                 </div>

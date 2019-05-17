@@ -3,7 +3,7 @@ import React from 'react';
 class DesignForm extends React.Component {
     render() {
         return (
-            <div id="design-container" className={`design__container--palette collapsible__container ${this.props.collapsibleValue.design === true ? '' : 'hidden'}`}>
+            <div id="design-container" className="design__container--palette collapsible__container">
                 <div>
                     <h3 className="design__title--colors">colores</h3>
 
