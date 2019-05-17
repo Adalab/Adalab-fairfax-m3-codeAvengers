@@ -11,20 +11,20 @@ import logo from './images/awesome-logo.svg';
 // }
 
 class App extends React.Component {
-  constructor (props) {
-    super (props);
-    this.handlerInput = this.handlerInput.bind (this);
-    this.handlePalette = this.handlePalette.bind (this);
-    this.handleCollapsibles = this.handleCollapsibles.bind(this);
+  constructor(props) {
+    super(props);
+    this.handlerInput = this.handlerInput.bind(this);
+    this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     this.state = {
-      card: {
-        name: 'Nombre completo',
+      card:{
+        name: 'Nombre Apellido',
         job: 'Front-End unicorn',
         email: '',
         phone: '',
         linkedin: '',
         github: '',
-        paletteDefault: 'option1',
+        palette: 1
       },
       collapsible: {
         design: true,
@@ -43,15 +43,15 @@ class App extends React.Component {
   }
 
   handlePalette (event) {
-    const selectedPalette = event.currentTarget.value;
-    if (selectedPalette === '1') {
-      this.setState ({card: {...this.state.card, paletteDefault: 'option1'}});
-    } else if (selectedPalette === '2') {
-      this.setState ({card: {...this.state.card, paletteDefault: 'option2'}});
-    } else {
-      this.setState ({card: {...this.state.card, paletteDefault: 'option3'}});
-    }
+    const selectedPalette = parseInt(event.currentTarget.value);
+    if (selectedPalette === 1) {
+      this.setState({card:{...this.state.card, palette: 1}})
+    } else if (selectedPalette === 2) {
+      this.setState({card:{...this.state.card, palette: 2}})
+    } else  {
+      this.setState({card:{...this.state.card, palette: 3}})
   }
+
 
   handleCollapsibles (event) {
     const selectedCollapsible = event.currentTarget.id;
@@ -69,6 +69,20 @@ class App extends React.Component {
         collapsible: {...newCollapsible, [selectedCollapsible]: true}
       })
     }
+
+
+
+  handleReset(event) {
+    this.setState({card:{
+      name: 'Nombre Apellido',
+      job: 'Front-End unicorn',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      palette: 1
+    }
+  })
   }
 
   render () {

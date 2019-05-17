@@ -27,7 +27,7 @@ class Collapsible extends React.Component {
                                             <h2 className="fill__title--name">Rellena</h2>
                                         </div> <i id="fill-arrow" className="fas fa-chevron-up arrow"></i>
                                     </div>
-                                    <FillForm actionToChange={this.props.actionToChange}/>
+                                    <FillForm actionToChange={this.props.actionToChange} newName={this.props.newName}/>
                                 </div>
                             </fieldset>
                             <fieldset className="fieldset__settings">
@@ -42,7 +42,7 @@ class Collapsible extends React.Component {
                         </div>
                     </form>
                 </div>
-                <Preview newName={this.props.newName} />
+                <Preview actionReset = {this.props.actionReset} newName={this.props.newName} />
             </main>
         )
     }
