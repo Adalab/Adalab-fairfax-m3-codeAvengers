@@ -9,8 +9,8 @@ class Card extends React.Component {
         return (
             <div className="card__body" id="card__body">
                 <Header />
-                <Collapsible actionToChange={this.props.actionToChange}
-                newName={this.props.newName} changeColor={this.props.changeColor}/>
+                <Collapsible actionReset = {this.props.actionReset} actionToChange={this.props.actionToChange}
+                newName={this.props.newName} changeColor={this.props.changeColor} checkedPalette={this.props.checkedPalette}/>
                 <Footer />
             </div>
         )

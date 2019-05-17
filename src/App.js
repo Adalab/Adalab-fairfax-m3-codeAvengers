@@ -16,16 +16,17 @@ class App extends React.Component {
     super(props);
     this.handlerInput = this.handlerInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     this.state = {
       card:{
-        name: 'Nombre completo',
+        name: 'Nombre Apellido',
         job: 'Front-End unicorn',
         email: '',
         phone: '',
         linkedin: '',
         github: '',
-        paletteDefault: 'option1'
-      } 
+        palette: 1
+      }
     }
   }
 
@@ -38,18 +39,33 @@ class App extends React.Component {
   }
 
   handlePalette (event) {
-    const selectedPalette = event.currentTarget.value;
-    if (selectedPalette === '1') {
-      this.setState({card:{...this.state.card, paletteDefault:'option1'}})
-    } else if (selectedPalette === '2') {
-      this.setState({card:{...this.state.card, paletteDefault:'option2'}})
+    const selectedPalette = parseInt(event.currentTarget.value);
+    if (selectedPalette === 1) {
+      this.setState({card:{...this.state.card, palette: 1}})
+    } else if (selectedPalette === 2) {
+      this.setState({card:{...this.state.card, palette: 2}})
     } else  {
-      this.setState({card:{...this.state.card, paletteDefault:'option3'}})  
+      this.setState({card:{...this.state.card, palette: 3}})  
   }
 }
 
+
+
+  handleReset(event) {
+    this.setState({card:{
+      name: 'Nombre Apellido',
+      job: 'Front-End unicorn',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      palette: 1
+    }
+  })
+  }
+
     render () {
-    return <Card actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette}/>
+    return <Card actionReset = {this.handleReset} actionToChange={this.handlerInput} newName = {this.state.card} changeColor={this.handlePalette} checkedPalette={this.state.checkedPalette} />
   }
   }
 
