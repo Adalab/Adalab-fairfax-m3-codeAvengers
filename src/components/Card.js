@@ -10,7 +10,7 @@ class Card extends React.Component {
             <div className="card__body" id="card__body">
                 <Header />
                 <Collapsible actionReset = {this.props.actionReset} actionToChange={this.props.actionToChange}
-                newName={this.props.newName} changeColor={this.props.changeColor}/>
+                newName={this.props.newName} changeColor={this.props.changeColor} checkedPalette={this.props.checkedPalette}/>
                 <Footer />
             </div>
         )

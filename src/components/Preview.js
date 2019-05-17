@@ -3,10 +3,10 @@ import ResetButton from './ResetButton';
 
 class Preview extends React.Component {
     render() {
-        const { name, job, email, phone, linkedin, github, paletteDefault } = this.props.newName;
+        const { name, job, email, phone, linkedin, github, palette } = this.props.newName;
         return (
             <div>
-                <section className={`section__card ${paletteDefault}`}>
+                <section className={`section__card option${palette}`}>
                     <div className="card__box">
                         <ResetButton actionReset = {this.props.actionReset} />
                         <div className="card__box--header">
