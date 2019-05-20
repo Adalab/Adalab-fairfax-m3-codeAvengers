@@ -3,7 +3,7 @@ import React from 'react';
 class FillForm extends React.Component {
     render() {
         return (
-            <div id="fill-container" className="fill__form collapsible__container">
+            <div id="fill-container" className={`fill__form collapsible__container $`}>
                 <fieldset className="fill__fieldset">
                     <label htmlFor="fullName">Nombre completo</label>
                     <input className="input-name" placeholder="Ej: Sally Jill"
