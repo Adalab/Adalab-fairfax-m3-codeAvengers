@@ -6,7 +6,6 @@ class DesignForm extends React.Component {
             <div id="design-container" className="design__container--palette collapsible__container">
                 <div>
                     <h3 className="design__title--colors">colores</h3>
-
                 </div>
                 <div> <a href="true" className="design__palette-colors">
                     <label className="design__palette palette1" htmlFor="settings__palette1">
