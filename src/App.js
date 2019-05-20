@@ -44,14 +44,14 @@ class App extends React.Component {
 
   handlePalette (event) {
     const selectedPalette = parseInt(event.currentTarget.value);
-    if (selectedPalette === 1) {
-      this.setState({card:{...this.state.card, palette: 1}})
-    } else if (selectedPalette === 2) {
-      this.setState({card:{...this.state.card, palette: 2}})
-    } else  {
-      this.setState({card:{...this.state.card, palette: 3}})
+      if (selectedPalette === 1) {
+        this.setState({card:{...this.state.card, palette: 1}})
+      } else if (selectedPalette === 2) {
+        this.setState({card:{...this.state.card, palette: 2}})
+      } else  {
+        this.setState({card:{...this.state.card, palette: 3}})
+    }
   }
-
 
   handleCollapsibles (event) {
     const selectedCollapsible = event.currentTarget.id;
@@ -60,15 +60,16 @@ class App extends React.Component {
       fill: false,
       share: false,
     }
-    if(this.state.collapsible[selectedCollapsible] === true) {
-      this.setState({
-        collapsible: {...newCollapsible, [selectedCollapsible]: false}
-      })
-    } else {
-      this.setState({
-        collapsible: {...newCollapsible, [selectedCollapsible]: true}
-      })
-    }
+      if(this.state.collapsible[selectedCollapsible] === true) {
+        this.setState({
+          collapsible: {...newCollapsible, [selectedCollapsible]: false}
+        })
+      } else {
+        this.setState({
+          collapsible: {...newCollapsible, [selectedCollapsible]: true}
+        })
+      }
+  }
 
 
 
