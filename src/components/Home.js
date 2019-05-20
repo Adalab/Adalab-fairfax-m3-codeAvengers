@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   render () {
@@ -49,9 +50,7 @@ class Home extends React.Component {
                 </ul>
                 <div className="landing__main--link-container">
                   {' '}
-                  <a href="card.html" className="landing__main--link">
-                    Comenzar
-                  </a>
+                  <Link to="/card" className="landing__main--link">Comenzar</Link>
                 </div>
               </div>
             </main>
