@@ -16,6 +16,8 @@ class App extends React.Component {
     this.handlerInput = this.handlerInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleCollapsibles = this.handleCollapsibles.bind(this);
+
     this.state = {
       card:{
         name: 'Nombre Apellido',
@@ -26,11 +28,7 @@ class App extends React.Component {
         github: '',
         palette: 1
       },
-      collapsible: {
-        design: true,
-        fill: false,
-        share: false,
-      },
+      collapsible: 'design'
     };
   }
 
@@ -55,20 +53,17 @@ class App extends React.Component {
 
   handleCollapsibles (event) {
     const selectedCollapsible = event.currentTarget.id;
-    const newCollapsible = {
-      design: false,
-      fill: false,
-      share: false,
-    }
-      if(this.state.collapsible[selectedCollapsible] === true) {
-        this.setState({
-          collapsible: {...newCollapsible, [selectedCollapsible]: false}
-        })
+    this.setState(prevState =>{
+      if(selectedCollapsible === prevState.collapsible) {
+        return {
+          collapsible: null
+        }
       } else {
-        this.setState({
-          collapsible: {...newCollapsible, [selectedCollapsible]: true}
-        })
+          return {
+            collapsible: selectedCollapsible
+          }
       }
+    })
   }
 
 
