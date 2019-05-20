@@ -85,7 +85,7 @@ class App extends React.Component {
     return (
       <Card
         actionToChange={this.handlerInput}
-        newName={this.state.card}
+        newCard={this.state.card}
         changeColor={this.handlePalette}
         actionToCollapsibles={this.handleCollapsibles}
         collapsibleValue={this.state.collapsible}

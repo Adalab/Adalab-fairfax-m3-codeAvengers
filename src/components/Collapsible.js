@@ -17,7 +17,7 @@ class Collapsible extends React.Component {
                                     <h2 className="design__title--name">diseña</h2>
                                     <i id="design-arrow" className="fas fa-chevron-up arrow"></i>
                                 </div>
-                                <DesignForm changeColor={this.props.changeColor} palette={this.props.newName.palette}/>
+                                <DesignForm changeColor={this.props.changeColor} palette={this.props.newCard.palette}/>
                                 </div>
                             </fieldset>
                             <fieldset className="fieldset__settings">
@@ -27,7 +27,7 @@ class Collapsible extends React.Component {
                                             <h2 className="fill__title--name">Rellena</h2>
                                         </div> <i id="fill-arrow" className="fas fa-chevron-up arrow"></i>
                                     </div>
-                                    <FillForm actionToChange={this.props.actionToChange} newName={this.props.newName}/>
+                                    <FillForm actionToChange={this.props.actionToChange} newCard={this.props.newCard}/>
                                 </div>
                             </fieldset>
                             <fieldset className="fieldset__settings">
@@ -42,7 +42,7 @@ class Collapsible extends React.Component {
                         </div>
                     </form>
                 </div>
-                <Preview actionReset = {this.props.actionReset} newName={this.props.newName} />
+                <Preview actionReset = {this.props.actionReset} newCard={this.props.newCard} />
             </main>
         )
     }

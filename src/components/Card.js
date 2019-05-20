@@ -10,7 +10,7 @@ class Card extends React.Component {
         <Header />
         <Collapsible
           actionToChange={this.props.actionToChange}
-          newName={this.props.newName}
+          newCard={this.props.newCard}
           changeColor={this.props.changeColor}
           actionToCollapsibles={this.props.actionToCollapsibles}
           collapsibleValue={this.props.collapsibleValue}
