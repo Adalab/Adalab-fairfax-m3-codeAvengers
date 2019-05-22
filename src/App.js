@@ -95,6 +95,7 @@ class App extends React.Component {
           )} />
           <Route path='/card' render={routerProps => (
             <Card match={routerProps.match}
+              actionReset={this.handleReset}
               actionToChange={this.handlerInput}
               newCard={this.state.card}
               changeColor={this.handlePalette}

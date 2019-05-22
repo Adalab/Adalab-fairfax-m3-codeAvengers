@@ -14,6 +14,7 @@ class Card extends React.Component {
           changeColor={this.props.changeColor}
           actionToCollapsibles={this.props.actionToCollapsibles}
           collapsibleValue={this.props.collapsibleValue}
+          actionReset={this.props.actionReset}
         />
         <Footer />
       </div>
