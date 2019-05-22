@@ -7,12 +7,6 @@ import logoAdalab from './images/logo-adalab.png';
 import logoAvengers from './images/avengers.png';
 import { Route, Switch } from 'react-router-dom';
 
-// class App extends React.Component {
-//   render () {
-//   return <Home LogoUrl={logo} title='Crea tu tarjeta de visita' subtitle='Crea mejores contactos profesionales de forma fácil y cómoda' logoAdalab={logoAdalab} logoAvengers={logoAvengers}/>
-// }
-// }
-
 class App extends React.Component {
   constructor(props) {
     super(props);
