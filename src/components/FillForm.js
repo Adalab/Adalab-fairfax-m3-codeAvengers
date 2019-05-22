@@ -1,4 +1,5 @@
 import React from 'react';
+import GetAvatar from './GetAvatar';
 
 class FillForm extends React.Component {
     render() {
@@ -14,12 +15,10 @@ class FillForm extends React.Component {
                 </fieldset>
                 <fieldset className="fill__fieldset select-image">
                     <label htmlFor="selectImage">Imagen de perfil</label>
-                    <div className="fill__select-image--container">
-                        <button className="fill__select--button js__profile-trigger" type="button">Añadir imagen</button>
-                        <input id="selectImage" type="file" accept=".png, .jpg, .jpeg"
-                            name="selectImage" className="js__profile-upload-btn" />
-                        <div className="preview__image js__profile-preview"></div>
-                    </div>
+                    <GetAvatar 
+                    profile={this.props.profile}
+                    isAvatarDefault={this.props.isAvatarDefault}
+                    updateAvatar={this.props.updateAvatar}/>
                 </fieldset>
                 <fieldset className="fill__fieldset">
                     <label htmlFor="email">Email</label>
