@@ -17,7 +17,9 @@ class Card extends React.Component {
           actionReset={this.props.actionReset}
           profile={this.props.profile}
           isAvatarDefault={this.props.isAvatarDefault}
-          updateAvatar={this.props.updateAvatar}
+          updateAvatar={this.props.updateAvatar} 
+          sendRequest = {this.props.sendRequest}
+          dataURL = {this.props.dataURL}
         />
         <Footer />
       </div>

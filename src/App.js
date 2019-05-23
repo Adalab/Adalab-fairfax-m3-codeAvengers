@@ -16,6 +16,7 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsibles = this.handleCollapsibles.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
 
     this.state = {
       card: {
@@ -30,6 +31,7 @@ class App extends React.Component {
       },
       collapsible: 'design',
       isAvatarDefault: true,
+      dataURL: ''
     };
   }
 
@@ -113,6 +115,27 @@ class App extends React.Component {
     })
   }
 
+  sendRequest(event){
+    event.preventDefault();
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(this.state.card),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({dataURL: data.cardURL})
+
+              
+        // if (data.succes === false){
+        //   console.log(data.error);
+        // }
+        // shareTwitter.innerHTML = `<a href="http://twitter.com/home?status=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20👀💼%20${data.cardURL}" target="_blank" rel="noopener" class="share__created--twitter"><i class="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>`;
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -130,7 +153,9 @@ class App extends React.Component {
               collapsibleValue={this.state.collapsible}
               profile={this.state.card.photo}
               isAvatarDefault={this.state.isAvatarDefault}
-              updateAvatar={this.updateAvatar} />
+              updateAvatar={this.updateAvatar} 
+              sendRequest = {this.sendRequest}
+              dataURL = {this.state.dataURL}/>
           )} />
         </Switch>
       </React.Fragment>
