@@ -41,7 +41,8 @@ class Collapsible extends React.Component {
                                         <h2 className="share__title--name">Comparte</h2>
                                         <i id="share-arrow" className="fas fa-chevron-up arrow"></i>
                                     </div>
-                                    <ShareForm actionToChange={this.props.actionToChange} />
+                                    <ShareForm actionToChange={this.props.actionToChange} 
+                                    sendRequest = {this.props.sendRequest} dataURL = {this.props.dataURL}/>
                                 </div>
                             </fieldset>
                         </div>

@@ -7,6 +7,7 @@ import logo from './images/awesome-logo.svg';
 import logoAdalab from './images/logo-adalab.png';
 import logoAvengers from './images/avengers.png';
 import {Route, Switch} from 'react-router-dom';
+import {fetchData} from './services/DataServices';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsibles = this.handleCollapsibles.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
 
     this.state = {
       card: {
@@ -30,6 +32,7 @@ class App extends React.Component {
       },
       collapsible: 'design',
       isAvatarDefault: true,
+      dataURL: ''
     };
   }
 
@@ -113,6 +116,22 @@ class App extends React.Component {
     })
   }
 
+  sendRequest(event){
+    event.preventDefault();
+      
+      fetchData(this.state.card)
+      .then(data => {
+        this.setState({dataURL: data.cardURL})
+      
+       console.log(data);
+
+              
+       if (data.success === false){
+         alert(`No has rellenado todos los campos ${data.error}`);
+       }
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -130,7 +149,9 @@ class App extends React.Component {
               collapsibleValue={this.state.collapsible}
               profile={this.state.card.photo}
               isAvatarDefault={this.state.isAvatarDefault}
-              updateAvatar={this.updateAvatar} />
+              updateAvatar={this.updateAvatar} 
+              sendRequest = {this.sendRequest}
+              dataURL = {this.state.dataURL}/>
           )} />
         </Switch>
       </React.Fragment>
