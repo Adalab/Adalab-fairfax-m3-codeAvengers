@@ -118,15 +118,16 @@ class App extends React.Component {
 
   sendRequest(event){
     event.preventDefault();
+      
       fetchData(this.state.card)
       .then(data => {
         this.setState({dataURL: data.cardURL})
       
-       
+       console.log(data);
 
               
-       if (data.succes === false){
-         console.log(data.error);
+       if (data.success === false){
+         alert(`No has rellenado todos los campos ${data.error}`);
        }
       });
   }
