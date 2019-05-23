@@ -25,22 +25,35 @@ class App extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        palette: 1
+        palette: 1,
+        photo: DefaultImage
       },
       collapsible: 'design',
       isAvatarDefault: true,
-      profile: {
-        avatar: DefaultImage
-      }
     };
   }
 
+  saveStorage () {
+    localStorage.setItem('userInfo', JSON.stringify(this.state));
+  }
+  componentDidMount () {
+    const savedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+   this.setState ({
+     card: {...savedUserInfo.card},
+     collapsible: savedUserInfo.collapsible,
+     isAvatarDefault: savedUserInfo.isAvatarDefault
+   })
+  }
+  componentDidUpdate () {
+    this.saveStorage()
+  }
+
   updateAvatar(img) {
-    const {profile} = this.state;
+    const {card} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = {...card, photo: img};
       return {
-        profile: newProfile,
+        card: newProfile,
         isAvatarDefault: false
       }
     });
@@ -89,13 +102,12 @@ class App extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        palette: 1
+        palette: 1,
+        photo: DefaultImage
+
       },
       collapsible: 'design',
-      isAvatarDefault: true,
-      profile: {
-        avatar: DefaultImage
-      }
+      isAvatarDefault: true
     })
   }
 
@@ -114,7 +126,7 @@ class App extends React.Component {
               changeColor={this.handlePalette}
               actionToCollapsibles={this.handleCollapsibles}
               collapsibleValue={this.state.collapsible}
-              profile={this.state.profile.avatar}
+              profile={this.state.card.photo}
               isAvatarDefault={this.state.isAvatarDefault}
               updateAvatar={this.updateAvatar} />
           )} />
