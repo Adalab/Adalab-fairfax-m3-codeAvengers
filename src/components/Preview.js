@@ -1,5 +1,6 @@
 import React from 'react';
 import ResetButton from './ResetButton';
+import ProfileImage from './ProfileImage';
 
 class Preview extends React.Component {
     render() {
@@ -15,7 +16,7 @@ class Preview extends React.Component {
                                 <p className="card__job-title resultJob">{job === '' ? 'Front end developer' : job}</p>
                             </div>
                         </div>
-                        <div className="card__photo js__profile-image"></div>
+                        <ProfileImage profile={this.props.profile}/>
                         <ul className="card__list">
                             <li className={`list__item list__item--email  ${email === '' ? 'hidden' : ''}`}>
                                 <a href={`mailto:${email}`} className="card__list--link far fa-envelope email__icon" target="_blank" rel="noopener noreferrer" >email</a>

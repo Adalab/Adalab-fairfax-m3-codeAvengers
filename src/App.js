@@ -2,10 +2,11 @@ import React from 'react';
 import './scss/main.scss';
 import Home from './components/Home';
 import Card from './components/Card.js';
+import DefaultImage from './components/DefaultImage';
 import logo from './images/awesome-logo.svg';
 import logoAdalab from './images/logo-adalab.png';
 import logoAvengers from './images/avengers.png';
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends React.Component {
     this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsibles = this.handleCollapsibles.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
 
     this.state = {
       card: {
@@ -25,8 +27,23 @@ class App extends React.Component {
         github: '',
         palette: 1
       },
-      collapsible: 'design'
+      collapsible: 'design',
+      isAvatarDefault: true,
+      profile: {
+        avatar: DefaultImage
+      }
     };
+  }
+
+  updateAvatar(img) {
+    const {profile} = this.state;
+    this.setState(prevState => {
+      const newProfile = {...profile, avatar: img};
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      }
+    });
   }
 
   handlerInput(event) {
@@ -63,8 +80,6 @@ class App extends React.Component {
     })
   }
 
-
-
   handleReset(event) {
     this.setState({
       card: {
@@ -75,6 +90,11 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         palette: 1
+      },
+      collapsible: 'design',
+      isAvatarDefault: true,
+      profile: {
+        avatar: DefaultImage
       }
     })
   }
@@ -82,7 +102,6 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-
         <Switch>
           <Route exact path='/' render={routerProps => (
             <Home match={routerProps.match} LogoUrl={logo} title='Crea tu tarjeta de visita' subtitle='Crea mejores contactos profesionales de forma fácil y cómoda' logoAdalab={logoAdalab} logoAvengers={logoAvengers} />
@@ -94,7 +113,10 @@ class App extends React.Component {
               newCard={this.state.card}
               changeColor={this.handlePalette}
               actionToCollapsibles={this.handleCollapsibles}
-              collapsibleValue={this.state.collapsible} />
+              collapsibleValue={this.state.collapsible}
+              profile={this.state.profile.avatar}
+              isAvatarDefault={this.state.isAvatarDefault}
+              updateAvatar={this.updateAvatar} />
           )} />
         </Switch>
       </React.Fragment>
