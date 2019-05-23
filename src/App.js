@@ -38,11 +38,13 @@ class App extends React.Component {
   }
   componentDidMount () {
     const savedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
-   this.setState ({
-     card: {...savedUserInfo.card},
-     collapsible: savedUserInfo.collapsible,
-     isAvatarDefault: savedUserInfo.isAvatarDefault
-   })
+    if (savedUserInfo !== null) {
+      this.setState ({
+        card: {...savedUserInfo.card},
+        collapsible: savedUserInfo.collapsible,
+        isAvatarDefault: savedUserInfo.isAvatarDefault
+      })
+    }
   }
   componentDidUpdate () {
     this.saveStorage()
