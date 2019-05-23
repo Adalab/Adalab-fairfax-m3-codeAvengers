@@ -7,6 +7,7 @@ import logo from './images/awesome-logo.svg';
 import logoAdalab from './images/logo-adalab.png';
 import logoAvengers from './images/avengers.png';
 import {Route, Switch} from 'react-router-dom';
+import {fetchData} from './services/DataServices';
 
 class App extends React.Component {
   constructor(props) {
@@ -117,22 +118,17 @@ class App extends React.Component {
 
   sendRequest(event){
     event.preventDefault();
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(this.state.card),
-      headers: {
-        'content-type': 'application/json'
-      },
-    })
-      .then(response => response.json())
+      fetchData(this.state.card)
       .then(data => {
         this.setState({dataURL: data.cardURL})
+      
+       
 
               
-        // if (data.succes === false){
-        //   console.log(data.error);
-        // }
-        // shareTwitter.innerHTML = `<a href="http://twitter.com/home?status=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20👀💼%20${data.cardURL}" target="_blank" rel="noopener" class="share__created--twitter"><i class="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>`;
+      //   // if (data.succes === false){
+      //   //   console.log(data.error);
+      //   // }
+      //   // shareTwitter.innerHTML = `<a href="http://twitter.com/home?status=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20👀💼%20${data.cardURL}" target="_blank" rel="noopener" class="share__created--twitter"><i class="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>`;
       });
   }
 
