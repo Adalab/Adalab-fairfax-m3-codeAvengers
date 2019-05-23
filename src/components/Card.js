@@ -3,23 +3,25 @@ import Header from './Header';
 import Collapsible from './Collapsible';
 import Footer from './Footer';
 
+
 class Card extends React.Component {
   render () {
+    const {actionToChange,newCard,changeColor,actionToCollapsibles,collapsibleValue, actionReset, profile, isAvatarDefault,updateAvatar,sendRequest,dataURL} = this.props;
     return (
       <div className="card__body" id="card__body">
         <Header />
         <Collapsible
-          actionToChange={this.props.actionToChange}
-          newCard={this.props.newCard}
-          changeColor={this.props.changeColor}
-          actionToCollapsibles={this.props.actionToCollapsibles}
-          collapsibleValue={this.props.collapsibleValue}
-          actionReset={this.props.actionReset}
-          profile={this.props.profile}
-          isAvatarDefault={this.props.isAvatarDefault}
-          updateAvatar={this.props.updateAvatar} 
-          sendRequest = {this.props.sendRequest}
-          dataURL = {this.props.dataURL}
+          actionToChange={actionToChange}
+          newCard={newCard}
+          changeColor={changeColor}
+          actionToCollapsibles={actionToCollapsibles}
+          collapsibleValue={collapsibleValue}
+          actionReset={actionReset}
+          profile={profile}
+          isAvatarDefault={isAvatarDefault}
+          updateAvatar={updateAvatar} 
+          sendRequest = {sendRequest}
+          dataURL = {dataURL}
         />
         <Footer />
       </div>
