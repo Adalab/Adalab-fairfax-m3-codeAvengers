@@ -125,10 +125,9 @@ class App extends React.Component {
        
 
               
-      //   // if (data.succes === false){
-      //   //   console.log(data.error);
-      //   // }
-      //   // shareTwitter.innerHTML = `<a href="http://twitter.com/home?status=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20👀💼%20${data.cardURL}" target="_blank" rel="noopener" class="share__created--twitter"><i class="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>`;
+       if (data.succes === false){
+         console.log(data.error);
+       }
       });
   }
 
