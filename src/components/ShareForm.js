@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ShareForm extends React.Component {
     render() {
@@ -13,13 +14,18 @@ class ShareForm extends React.Component {
                     <a href={dataURL} className="share__created--link">{dataURL}</a>
                     <div className="share__created--twitter-container">
                         <div className="twitter">
-                            <a href={`http://twitter.com/intent/tweet?text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20creada%20por%20;hashtags=codeAvengers,adalabers%20🦹🏻‍♀️%20${dataURL}`} target="_blank" rel="noopener" className="share__created--twitter"><i className="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>
+                            <a href={`http://twitter.com/intent/tweet?text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20creada%20por%20;hashtags=codeAvengers,adalabers%20🦹🏻‍♀️%20${dataURL}`} target="_blank" rel="noopener noreferrer" className="share__created--twitter"><i className="share__created--twitter-img fab fa-twitter"></i> Compartir en twitter</a>
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
+}
+
+ShareForm.propTypes = {
+    sendRequest: PropTypes.func,
+    dataURL: PropTypes.string
 }
 
 export default ShareForm;

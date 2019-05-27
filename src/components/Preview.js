@@ -1,6 +1,7 @@
 import React from 'react';
 import ResetButton from './ResetButton';
 import ProfileImage from './ProfileImage';
+import PropTypes from 'prop-types';
 
 class Preview extends React.Component {
     render() {
@@ -36,6 +37,16 @@ class Preview extends React.Component {
             </div>
         )
     }
+}
+
+Preview.propTypes = {
+    name: PropTypes.string,
+    job: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.number,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+    palette: PropTypes.number
 }
 
 export default Preview;
