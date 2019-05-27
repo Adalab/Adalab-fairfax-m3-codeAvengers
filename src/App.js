@@ -67,7 +67,6 @@ class App extends React.Component {
   handlerInput(event) {
     const trigger = event.currentTarget.value;
     const key = event.currentTarget.name;
-    console.log(key);
     const obj = { ...this.state.card, [key]: trigger };
     this.setState({ card: obj });
   }

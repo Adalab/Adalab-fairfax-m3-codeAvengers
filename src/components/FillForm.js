@@ -1,5 +1,6 @@
 import React from 'react';
 import GetAvatar from './GetAvatar';
+import PropTypes from 'prop-types';
 
 class FillForm extends React.Component {
     render() {
@@ -38,6 +39,14 @@ class FillForm extends React.Component {
             </div>
         )
     }
+}
+
+FillForm.propTypes = {
+    actionToChange: PropTypes.func,
+    newCard: PropTypes.object,
+    isAvatarDefault: PropTypes.bool,
+    updateAvatar: PropTypes.func,
+    profile: PropTypes.string
 }
 
 export default FillForm;
