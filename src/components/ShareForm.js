@@ -30,7 +30,7 @@ class ShareForm extends React.Component {
               <a
                 href={`http://twitter.com/intent/tweet?text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20profesional%20creada%20por%20;hashtags=codeAvengers,adalabers%20🦹🏻‍♀️%20${dataURL.cardURL}`}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="share__created--twitter"
               >
                 <i className="share__created--twitter-img fab fa-twitter" />
@@ -47,7 +47,7 @@ class ShareForm extends React.Component {
 
 ShareForm.propTypes = {
     sendRequest: PropTypes.func,
-    dataURL: PropTypes.string
+    dataURL: PropTypes.object
 }
 
 export default ShareForm;

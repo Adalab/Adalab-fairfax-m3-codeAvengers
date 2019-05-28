@@ -3,6 +3,7 @@ import DesignForm from './DesignForm';
 import FillForm from './FillForm';
 import ShareForm from './ShareForm';
 import Preview from './Preview';
+import PropTypes from 'prop-types';
 
 class Collapsible extends React.Component {
     render() {
@@ -54,6 +55,20 @@ class Collapsible extends React.Component {
         )
     }
 }
+
+Collapsible.propTypes = {
+    actionToChange: PropTypes.func,
+    newCard: PropTypes.object,
+    changeColor: PropTypes.func,
+    actionToCollapsibles: PropTypes.func,
+    collapsibleValue: PropTypes.string,
+    actionReset: PropTypes.func,
+    profile: PropTypes.string,
+    isAvatarDefault: PropTypes.bool,
+    updateAvatar: PropTypes.func,
+    sendRequest: PropTypes.func,
+    dataURL: PropTypes.object
+  };
 
 export default Collapsible;
 

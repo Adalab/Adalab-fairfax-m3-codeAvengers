@@ -113,6 +113,6 @@ class DesignForm extends React.Component {
 DesignForm.propTypes = {
   changeColor: PropTypes.func,
   palette: PropTypes.number
-};
+}
 
 export default DesignForm;
