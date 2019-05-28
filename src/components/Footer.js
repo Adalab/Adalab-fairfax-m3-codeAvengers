@@ -12,6 +12,7 @@ class Footer extends React.Component {
                     <a
                         href="https://github.com/Adalab/fairfax-m2-catchFire"
                         target="_blank"
+                        rel="noopener noreferrer" 
                     >
                         <img
                             src={logoAvengers}
@@ -23,6 +24,7 @@ class Footer extends React.Component {
                         href="https://adalab.es/"
                         className="footer__link"
                         target="_blank"
+                        rel="noopener noreferrer" 
                     >
                         <img src={logoAdalab} alt="logo adalab" className="footer__img" />
                     </a>

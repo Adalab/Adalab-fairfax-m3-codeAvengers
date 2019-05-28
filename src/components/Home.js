@@ -1,8 +1,11 @@
 import React from 'react';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Home extends React.Component {
   render () {
+    const {LogoUrl, title, subtitle} = this.props;
     return (
       <div className="all">
         <div className="landing__wrapper">
@@ -12,7 +15,7 @@ class Home extends React.Component {
                 {' '}<a href="index.html">
                   <h1
                     className="header__logo"
-                    style={{backgroundImage: `url(${this.props.LogoUrl})`}}
+                    style={{backgroundImage: `url(${LogoUrl})`}}
                   >
                     Title Awesome profile-cards
                   </h1>
@@ -22,10 +25,10 @@ class Home extends React.Component {
             <main className="landing__main">
               <div className="wrapper">
                 <h2 className="landing__main--title">
-                  {this.props.title}
+                  {title}
                 </h2>
                 <h3 className="landing__main--description">
-                  {this.props.subtitle}
+                  {subtitle}
                 </h3>
                 <ul className="landing__list">
                   <li className="landing__list--item">
@@ -49,9 +52,7 @@ class Home extends React.Component {
                 </ul>
                 <div className="landing__main--link-container">
                   {' '}
-                  <a href="card.html" className="landing__main--link">
-                    Comenzar
-                  </a>
+                  <Link to="/card" className="landing__main--link">Comenzar</Link>
                 </div>
               </div>
             </main>
@@ -62,5 +63,11 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  LogoUrl: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string
+};
 
 export default Home;
