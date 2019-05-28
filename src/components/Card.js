@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Collapsible from './Collapsible';
 import Footer from './Footer';
-
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render () {
@@ -27,6 +27,20 @@ class Card extends React.Component {
       </div>
     );
   }
+}
+
+Card.propTypes = {
+  actionToChange: PropTypes.func,
+  newCard: PropTypes.object,
+  changeColor: PropTypes.func,
+  actionToCollapsibles: PropTypes.func,
+  collapsibleValue: PropTypes.string,
+  actionReset: PropTypes.func,
+  profile: PropTypes.string,
+  isAvatarDefault: PropTypes.bool,
+  updateAvatar: PropTypes.func,
+  sendRequest: PropTypes.func,
+  dataURL: PropTypes.object
 }
 
 export default Card;
