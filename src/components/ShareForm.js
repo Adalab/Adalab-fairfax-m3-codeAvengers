@@ -1,5 +1,6 @@
 import React from 'react';
 import Loader from './Loader';
+import PropTypes from 'prop-types';
 
 class ShareForm extends React.Component {
   render () {
@@ -42,6 +43,11 @@ class ShareForm extends React.Component {
       </div>
     );
   }
+}
+
+ShareForm.propTypes = {
+    sendRequest: PropTypes.func,
+    dataURL: PropTypes.string
 }
 
 export default ShareForm;
