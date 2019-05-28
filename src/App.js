@@ -32,7 +32,9 @@ class App extends React.Component {
       },
       collapsible: 'design',
       isAvatarDefault: true,
-      dataURL: ''
+      dataURL: {
+        loading : false
+      },
     };
   }
 
@@ -67,7 +69,6 @@ class App extends React.Component {
   handlerInput(event) {
     const trigger = event.currentTarget.value;
     const key = event.currentTarget.name;
-    console.log(key);
     const obj = { ...this.state.card, [key]: trigger };
     this.setState({ card: obj });
   }
@@ -117,15 +118,13 @@ class App extends React.Component {
   }
 
   sendRequest(event){
-    event.preventDefault();
-      
+    event.preventDefault(); 
+    this.setState({dataURL: {loading: true}});
       fetchData(this.state.card)
       .then(data => {
-        this.setState({dataURL: data.cardURL})
-      
-       console.log(data);
-
-              
+        this.setState(
+          {dataURL: {loading: false, ...data}}
+          )             
        if (data.success === false){
          alert(`No has rellenado todos los campos ${data.error}`);
        }
